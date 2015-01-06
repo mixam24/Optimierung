@@ -1,0 +1,106 @@
+\section{Лекция 7. Теорема о поляре полиэдрического конуса}
+\subsection{Теорема о поляре полиэдрического конуса}
+{\bf Теорема 2.46}
+Для поляра полиэдрического конуса $K=P^{\le}(A,\mathbb{O}_m)$ (где $A \in \mathbb{R}^{m \times n}$) выполнено
+\begin{center} $K^{\circ}=ccone\{A_{1,*}, \dots, A_{m,*}\}$ \end{center}
+В частности: поляр полиэдрического конуса конечно порожденный.
+
+{\it Доказательство}\\
+Предположим, что это не так. Пусть $\tilde K =ccone\{A_{1,*}, \dots , A_{m,*}\}$. \\
+Из замечания 2.37 ${\tilde K}^{\circ}=P^{\le}(A, \mathbb{O}_m)$\\
+Т.к. конус ${\tilde K}$ замкнут, то из теорем 2.32, 2.38 ${\tilde K}^{\circ \circ}=\tilde K$\\
+${\tilde K}^{\circ \circ}=P^{\le}(A,\mathbb{O}_m)^{\circ}=K^{\circ}$
+$\square$
+
+{\bf Следствие 2.47}
+Пусть $K_1, \dots , K_q \subseteq \mathbb{R}^n$ полиэдрические конусы. \\Тогда
+\begin{center}
+$(\bigcap_{i=1}^q K_i)^{\circ} = \sum_{i=1}^q K_i^{\circ}$
+\end{center}
+Поляр пересечения, из пердыдущей теоремы, есть выпуклая коническая оболочка, натянутая на строки.\\
+А это есть ни что иное как сумма Минковского поляров.
+\subsection{Лемма Фаркаша}
+{\bf Лемма 2.48 (Фаркаш)}
+Пусть $A \in \mathbb{R}^{m \times n}$ и $b \in \mathbb{R}^m$. Тогда если $P^{\le}
+(A, b) = \varnothing $, то существует $ \lambda \in \mathbb{R}_{+}^m $ и
+\begin{center} $\lambda^TA=\mathbb{O}_n^T$ и $<\lambda, b>=-1$ \end{center}
+
+{\it Доказательство}\\
+В обратную сторону все должно быть понятно:\\
+Система неразрешима, если существует
+\begin{equation*}
+\lambda \in \mathbb{R}_{+}^m \text{ и } \lambda^TA=\mathbb{O}_n^T \text{ и } <\lambda, b>=-1
+\end{equation*}
+Т.к. имеем $\left(\lambda^{T}A\right)x\leq \lambda^{T}b$ и получаем $-1\leq 0$\\
+Пусть $Ax \le b$ неразрешима. Определим
+\begin{center}
+$\bar A=\begin{bmatrix}
+A & -b \\
+\mathbb{O}_{n}^{T} & -1
+\end{bmatrix}
+\in \mathbb{R}^{(m+1) \times (n+1)}$
+\end{center}
+Из того, что $Ax \le b$ неразрешима следует, что $P^{\le}(\bar A, \mathbb{O}_{m+1}) \subseteq H^{\le}(e_{n+1},0)$.\\
+Предположим, что это не так. Тогда $\bar {A}x \le \mathbb{O}_{m+1}$ и $x_{n+1}>0$.\\
+$Ax_{[n]} \le x_{n+1} b$;\\
+$A \frac{1}{x_{n+1}} x_{[n]} \le b$.\\
+Т.е мы нашли решение системы $\Longrightarrow$ противоречие.\\
+Следовательно, $e_{n+1} \in \left(P^{\le}(\bar A, \mathbb{O}_{m+1})\right)^{\circ}$. Значит, по теореме 2.46, т.к. поляр есть выпуклая коническая оболочка, натянутая на строки матрицы, существует коническая комбинация для разложения $e_{n+1}$\begin{equation*}
+\exists \lambda \in \mathbb{R}_{+}^m, \lambda_{0} \in \mathbb{R}_{+}: \lambda^TA=\mathbb{O}_n, \lambda^T(-b)+\lambda_{0}(-1)=1
+\end{equation*}
+$\lambda^TA=\mathbb{O}_n$ -- первых n нулевых координат $e_{n+1}$
+\begin{equation*}
+\lambda^Tb=-\lambda_{0}-1<0
+\end{equation*}
+Умножая на $\frac{1}{|-\lambda_{0}-1|}$, получаем требуемое.
+$\square$\\
+\subsection{Теорема о матрице}
+{\bf Теорема 2.49}
+Для любой матрицы $A \in \mathbb{R}^{m \times n}$ и $b \in \mathbb{R}^m$ выполняется: или\\
+$P^{\leq}( A, \mathbb{O}_{m})=\{x \in \mathbb{R}^n | Ax \le b\} \not= \varnothing$\\
+или\\
+$\{y \in \mathbb{R}^m | A^Ty=\mathbb{O}_n, <b,y>=-1, y \ge \mathbb{O}_m\} \not= \varnothing$\\
+(но не оба).
+
+\newpage
+\subsection{Глава 3. Оптимальные условия для выпуклой задачи оптимизации}
+\begin {center}
+{\bf Глава 3}\\
+Оптимальные условия для выпуклой задачи оптимизации
+\end {center}
+
+\begin {itemize}
+\item {\bf Выпуклая задача оптимизации}
+\begin {center}
+min$\{f(x)$ | $x \in X\}$
+\end {center}
+\item {\bf Частный случай} Максимизировать/минимизировать линейную функцию на выпуклом множестве
+\begin {center}
+max$\{f(x)\}=-$min$\{-f(x)\}$
+\end {center}
+\end {itemize}
+
+\begin {enumerate}
+\item Задача линейной оптимизации
+
+ \begin {itemize}
+ \item $f$ аффинная, $g$ аффинная, $X_0=\mathbb{R}_{+}^r \times \mathbb{R}_{-}^s \times \mathbb{R}^m$
+ \end {itemize}
+
+\item Полуопределенная задача оптимизации\\
+Как и в линейном программировании, но в $X_0$ множитель $\mathbb{S}_{+}^l$.\\
+$\mathbb{S}_{+}^l=\{M \in \mathbb{S}^l$ | M положительно полуопределена\}\\
+$\mathbb{S}^l=\{M \in \mathbb{R}^{l \times l}$ | M симметрическая\}\\
+Стандартный вид:\\
+min/max$<C,X>$\\
+$<A^{(i)},X>=b_i, \forall i \in [p]$\\
+$X \in \mathbb{S}_{+}^k$, $C \in \mathbb{S}^k$, $A^{(i)} \in \mathbb{S}^K$, $b_i \in \mathbb{R}$, $i \in [p]$\\
+Каждую полуопределенную задачу (также линейную задачу) можно привести к полуопределенной задаче в стандартном виде.
+
+\begin {itemize}
+\item Скалярное произведение определяется \\
+$<M,M'>=\sum_{i,j}M_{i,j}M'_{i,j}$
+
+\item $\mathbb{S}^k \subseteq \mathbb{R}^{k \times k}$ является подпространством размерности $\frac{k(k+1)}{2}$
+\end {itemize}
+\end {enumerate} 

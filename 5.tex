@@ -1,0 +1,69 @@
+\section{Лекция 5. Теоремы отделимости для выпуклых множеств}
+\subsection{Теоремы отделимости для выпуклых множеств}
+
+\noindent\textbf{Лемма 2.16a}\\
+
+Пусть $X\subseteq \mathbb{R}^n$ ~-- выпуклое, $y \in \mathbb{R}^{n} \setminus X$. Тогда существует $a \in \mathbb{R}^{n} \setminus \left\lbrace\mathbb{O}\right\rbrace$ что $\left\langle a,x \right\rangle \leq \left\langle a,y \right\rangle \text{, } \forall x \in X$\\
+
+$\blacktriangleleft$
+\begin{itemize}
+\item Достаточно построить последовательность $y^{(k)} \in \mathbb{R}^{n} \setminus cl(X)$, чтобы $\lim_{k \rightarrow \infty} y^{(k)} =y$.
+\begin{itemize}
+\item  По теореме 2.15 (т.к. $cl(X)$ замкнуто и выпукло) существует  $a^{(k)} \in \mathbb{R}^{n} \setminus \left\lbrace \mathbb{O} \right\rbrace$, что  $\left\langle a^{(k)},x \right\rangle \leq \left\langle a^{(k)},y^{(k)} \right\rangle \text{, } \forall k \in \mathbb{N} \text{, } \forall x \in cl(X)$
+\item С помощью масштабирования сделаем $\| a^{(k)}\| =1 \text{, } \forall k \in \mathbb{N}$, по Теореме Больцано-Вейерштрасса существует $K \subseteq \mathbb{N}$ что $\lim a^{(k)}=a \in \mathbb{R}^{n} \text{, при } k \rightarrow \infty \text{, } k \in K$
+\item Т.к. $\| a^{(k)}\| =1$ и $\| \text{ } \|$ - непрерывное отображение, то $\| a\| =1 \text{ и } \Longrightarrow a \neq \mathbb{O} $
+\item Имеем $\forall x \in X$:
+\begin{itemize}
+\item  $\left\langle a^{(k)},x \right\rangle \leq \left\langle a^{(k)},y^{(k)} \right\rangle \text{, } \forall k \in \mathbb{N}$
+\item Т.к. скалярное произвендение непрерывно $\Longrightarrow \text{ } \left\langle a,x \right\rangle \leq \left\langle a,y \right\rangle$
+\end{itemize}
+\end{itemize}
+\item Существование последовательности $y^{(k)} \in \mathbb{R}^{n} \setminus cl(X) \text{, что } \lim_{k \rightarrow \infty} y^{(k)}=y$ следует из того, что для $k \in \left\lbrace 1,2,\text{...}\right\rbrace$ не все точки  $v^{(0)}:=y -\frac{1}{k}\mathbbm{1} \text{, } v^{(1)}:=y -\frac{1}{k}\mathbbm{e_{1}} \text{, } v^{(n)}:=y -\frac{1}{k}\mathbbm{e_{n}}$ лежат в $cl(X)$.
+\begin{itemize}
+\item Предположим, что $v^{(0)}\text{, }v^{(1)}\text{, ...,}v^{(n)} \in cl(X)$, тогда $\displaystyle y=\sum_{i=1}^{n}\frac{1}{n+1}v{(i)} \in int(cl(X)) \subseteq X$. Противоречие, т.к. $y \notin X$. $\blacktriangleright$
+\end{itemize}
+\end{itemize}
+\noindent\textbf{Терема 2.16}\\
+Пусть $X, Y\subseteq \mathbb{R}^n$ ~--- выпуклые множества и $X \cap Y = \varnothing$. Тогда существует такой $a\in\mathbb{R}^n\setminus \left \{ \mathbb{O}_n \right \}$, что \textbf{$\left \langle a,x \right \rangle \leq \left \langle a,y \right \rangle$} для $\forall x\in X, y \in Y$.\\
+
+$\blacktriangleleft$
+\begin{itemize}
+\item Множества $X,Y \in \mathbb{R}^{n}$ -выпуклы и $X\cap Y = \varnothing$
+\item Множество $X + \left( (-1) Y\right):=X-Y$ - выпукло (т.к. сумма Минковского выпуклых множеств является выпуклым множеством) и $\mathbb{O} \notin X-Y$
+\item Из Леммы 2.16a $\Longrightarrow \text{ } \exists \text{ } a \in \mathbb{R}^{n} \setminus \left\lbrace \mathbb{O} \right\rbrace \text{ :} \left\langle a, x-y \right\rangle \leq \left\langle a, \mathbb{O}  \right\rangle \text{ ,} \forall x \in X \text{ ,} \forall y \in Y$.
+\item Т.к. $ \left\langle a, \mathbb{O}  \right\rangle = 0$, то  $\left\langle a, x-y \right\rangle \leq \left\langle a, \mathbb{O}  \right\rangle \text{ } \Longleftrightarrow \left \langle a,x \right \rangle \leq \left \langle a,y \right \rangle$. $\blacktriangleright$
+\end{itemize}
+\subsection{Теорема Каратеодори}
+\noindent\textbf{Теорема 2.31}\\
+Пусть $X \subseteq \mathbb{R}^{n}$ и $x \in cconeX$, тогда есть линейно-независимое подмножество $X_{1} \subseteq X$, что $x\in cconeX_{1}$.\\
+
+\noindent\textbf{Теорема 2.32}\\
+Конечнопорожденный конус является выпуклым и замкнутым.\\
+
+$\blacktriangleleft$ 
+\begin{itemize}
+\item Пусть $X \subseteq \mathbb{R}^{n} \text{, } |X|< \infty \text{, } K:=ccone(X)$.
+\item $K$, очевидно, выпукло.
+\item По теореме 2.31 $\displaystyle\Longrightarrow \text{ } ccone(X)= \bigcup_{\hat{X}\subseteq X} \text{ } ccone(\hat{X}) \text{, где } \hat{X} \subseteq X \text{, } \hat{X} \text{ - линейно-независимы}$
+\item Т.к. конечное объединение замкнутых множеств - замкнуто, достаточно показать, что для каждого линейно-независимого подмножества $\hat{X} \subseteq \mathbb{R}^{n}$ симплициальный конус $ccone(\hat{X})$ замкнут.
+\item Дополним $\hat{X}$ до базиса из $\mathbb{R}^{n}$ как  $\hat{X} \sqcup Y$ и определим линейное отображение $\varphi \text{: } \mathbb{R}^{n} \longrightarrow \mathbb{R}^{\hat{X}} \text{ как } \varphi \left( x \right):=\mathbbm{e_{x}} \text{, } \forall x \in \hat{X}$ и $\varphi \left( y \right):= \mathbb{O} \text{, } \forall y \in Y$ 
+\item Прообраз $\varphi^{-1}\left( \mathbb{\hat{X}}^{n}_{+}\right)$ множества $\mathbb{R}^{\hat{X}}_{+}$ замкнуто, т.к. $\varphi$ непрерывно и $\mathbb{R}^{\hat{X}}_{+}$ замкнуто.
+\item $\varphi^{-1}\left( \mathbb{R}^{\hat{X}}_{+} \right)=\left\lbrace \displaystyle\sum_{x \in \hat{X}} \lambda_{x} x + \sum_{y \in Y} \mu_{y} y  \text{ :} \lambda_{x} \geq 0 \text{, } \forall x \in \hat{X} \text{, } \mu_{y} \in \mathbb{R} \text{, } \forall y \in Y \right\rbrace = \displaystyle ccone(\hat{X}) +lin(Y)$
+\item Т.к. $lin(\hat{X})\cap lin(Y)= \left\lbrace \mathbb{O} \right\rbrace \text{ :} \varphi^{-1}\left( \mathbb{R}^{\hat{X}}_{+} \right) \cap lin(\hat{X})=ccone(\hat{X})$. Множества $\varphi^{-1}\left( \mathbb{R}^{\hat{X}}_{+} \right) \text{ - замкнуто и } lin(\hat{X})$ - замкнуто.
+\item $\Longrightarrow ccone(\hat{X})$ - замкнуто. $\blacktriangleright$
+\end{itemize}
+\subsection{Полярные Конусы}
+\noindent\textbf{Определение 2.33} \\
+
+ Для конуса $K\subseteq \mathbb{R}^n$ полярным конусом называется множество
+ \begin{equation*}
+K^{\circ}:= \left\lbrace y \in \mathbb{R}^n : \left\langle y, x \right\rangle \leq 0  \text{, } \forall x \in K \right\rbrace
+ \end{equation*}
+ \subsection{Свойства полярных конусов}
+\begin{itemize}
+\item \noindent\textbf{Замечание 2.34} Если $K_{1} \subseteq K_{2}$, то $K_{2}^{\circ} \subseteq K_{1}^{\circ}$
+\item \noindent\textbf{Замечание 2.35} Для $cl(K)$ конуса $K\subseteq \mathbb{R}^n$ выполнятеся $K^{\circ}=(cl(K))^{\circ} $
+\item \noindent\textbf{Замечание 2.36} Полярный конус является выпуклым замкнутым конусом.
+\item \noindent\textbf{Замечание 2.37} Для $X\subseteq \mathbb{R}^n$ выполняется $(cconeX)^{\circ}=\left\lbrace y \in \mathbb{R}^n | \left\langle x,y \right\rangle \leq 0 \text{, } \forall x \in X \right\rbrace$
+\end{itemize}
+\noindent\textbf{Теорема 2.38} Для любого замкнутого выпуклого конуса $K$ выполняется $K^{\circ \circ}= K$
